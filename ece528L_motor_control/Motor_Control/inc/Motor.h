@@ -19,7 +19,10 @@
 #include "../inc/Timer_A0_PWM.h"
 
 /**
- * @brief
+ * @brief Initializes the motor control pins and Timer A) PWM.
+ *
+ * This function configures the GPIO pins used to control the motor direction and enable signals. It also
+ * initializes Timer A0 to generate PWM signals for controlling the motor speed.
  *
  * @param None
  *
@@ -56,22 +59,28 @@ void Motor_Forward(uint16_t left_duty_cycle, uint16_t right_duty_cycle);
 void Motor_Backward(uint16_t left_duty_cycle, uint16_t right_duty_cycle);
 
 /**
- * @brief
+ * @brief Moves the motors forward with specified duty cycles.
  *
- * @param left_duty_cycle
+ * This function configures the motors to  turn left by setting the appropriate GPIO pins. It also updates the duty
+ * cycle for both left and right motors using Timer A0 PWM control to adjust motor speed.
  *
- * @param right_duty_cycle
+ * @param left_duty_cycle The duty cycle for the left motor (0-99%).
+ *
+ * @param right_duty_cycle The duty cycle for the right motor (0-99%).
  *
  * @return None
  */
 void Motor_Left(uint16_t left_duty_cycle, uint16_t right_duty_cycle);
 
 /**
- * @brief
+ * @brief Moves the motors forward with specified duty cycles.
  *
- * @param left_duty_cycle
+ * This function configures the motors to  turn right by setting the appropriate GPIO pins. It also updates the duty
+ * cycle for both left and right motors using Timer A0 PWM control to adjust motor speed.
  *
- * @param right_duty_cycle
+ * @param left_duty_cycle The duty cycle for the left motor (0-99%).
+ *
+ * @param right_duty_cycle The duty cycle for the right motor (0-99%).
  *
  * @return None
  */

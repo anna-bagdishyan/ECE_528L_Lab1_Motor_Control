@@ -24,13 +24,16 @@
 #define TIMER_A0_PERIOD_CONSTANT 15000
 
 /**
- * @brief
+ * @brief Initialize Timer A0 in PWM mode.
  *
- * @param period_constant
+ * This function initializes Timer A0 to generate PWM signals on the designated output pins. It configures
+ * the timer's clock source, prescale value, and PWM mode settings.
  *
- * @param duty_cycle_1
+ * @param period The PWM period constant.
  *
- * @param duty_cycle_2
+ * @param duty_cycle_1 The duty cycle for the PWM signal, P2.6 (PM_TA0.3, CCR[3])
+ *
+ * @param duty_cycle_2 The duty cycle for the PWM signal, P2.7 (PM_TA0.4, CCR[4])
  *
  * @return None
  */
