@@ -80,8 +80,12 @@ void SysTick_Handler(void)
  */
 void Bumper_Switches_Handler(uint8_t bumper_switch_state)
 {
-    printf("Collision Detected! Bumper Switch State: 0x%02X\n", bumper_switch_state);
-    P8->OUT |= 0x80;
+    if (collision_detected == 0)
+    {
+        printf("Collision Detected! Bumper Switch State: 0x%02X\n", bumper_switch_state);
+
+        collision_detected = 1;
+    }
 }
 
 /**
@@ -149,37 +153,28 @@ void Drive_Pattern_1()
  */
 void Handle_Collision()
 {
-    // Stop the motors
+    // Stop the motors for two seconds.
+    Motor_Stop();
+    Clock_Delay1ms(2000);
 
+    // Move backward for two seconds at 30% duty cycle.
+    Motor_Backward(4500, 4500);
+    Clock_Delay1ms(2000);
 
-    // Make a function call to Clock_Delay1ms(2000)
+    // Stop the motors for one second.
+    Motor_Stop();
+    Clock_Delay1ms(1000);
 
+    // Turn right for four seconds at 10% duty cycle.
+    Motor_Right(1500, 1500);
+    Clock_Delay1ms(4000);
 
-    // Move the motors backward with 30% duty cycle
+    // Stop the motors for two seconds.
+    Motor_Stop();
+    Clock_Delay1ms(2000);
 
-
-    // Make a function call to Clock_Delay1ms(2000)
-
-
-    // Stop the motors
-
-
-    // Make a function call to Clock_Delay1ms(1000)
-
-
-    // Make the robot turn to the right with 10% duty cycle
-
-
-    // Make a function call to Clock_Delay1ms(4000)
-
-
-    // Stop the motors
-
-
-    // Make a function call to Clock_Delay1ms(2000)
-
-
-    // Set the collision_detected flag to 0
+    // Allow the next bumper press to trigger another response.
+    collision_detected = 0;
 
 }
 
@@ -231,15 +226,15 @@ int main(void)
 //        LED2_Output(RGB_LED_BLUE);
 //        Clock_Delay1ms(3000);
 
-          Drive_Pattern_1();
+//          Drive_Pattern_1();
 
-//        if (collision_detected == 1)
-//        {
-//            Handle_Collision();
-//        }
-//        else
-//        {
-//            Motor_Forward(4500, 4500);
-//        }
+          if (collision_detected == 1)
+          {
+              Handle_Collision();
+          }
+          else
+          {
+              Motor_Forward(4500, 4500);
+          }
     }
 }
