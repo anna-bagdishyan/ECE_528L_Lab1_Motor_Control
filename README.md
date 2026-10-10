@@ -40,7 +40,11 @@ The BMP0 signal at P4.0 was obsered on CH1 and P8.7 was observed on CH2. When BM
 Figure # - Oscilloscope photo of P4.0 and P8.7
 
 ### Task 4
+The Timer_0A_PWM_Init() function was implemented in Timer_0A_PWM.c to generate the PWM signals for the DC motors, using Timer_A2_PWM_Init() as a reference. P2.6 and P2.7 were configured as PWM outputs for the right and left motors. CCR[3] and CCR[4] were set to Toggle/Reset mode and assigned the duty cycle values, and the timer was set to use SMCLK divided by 8 in Up/Down mode.
+
 ### Task 5
+The Motor_Init(), Motor_Left(), and Motor_Right() functions were implemented in Motor.c, using Motor_Forward() and Motor_Backward() as references. Motor_Init() sets P5.4, P5.5, P3.6, and P3.7 as outputs, and sets up Timer_A0 with a 20ms period. Motor_Left() sets the left motor backward and the right motor forward so the robot turns left in place, while Motor_Right() does the opposite. Both functions update the duty cycles and set P3.6 and P3.7 high to enable the motors.
+
 ### Task 6
 ### Task 7
 
