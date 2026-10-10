@@ -49,6 +49,9 @@ The Motor_Init(), Motor_Left(), and Motor_Right() functions were implemented in 
 Drive_Pattern_1() was used to test the PWM and motor drivers. The function call was uncommented in the main loop, and the program was rebuilt and flashed. After testing, the Drive_Pattern_1() call was commented out.
 
 ### Task 7
+The Handle_Collision() function was implemented in main.c to control how the robot reacts after a collision. When called, the robot stops for two seconds, moves backward for two seconds at 30% duty cycle, stops for one second, turns right for four seconds at 10% duty cycle, and stops for two more seconds. The collision_detected flag is then cleared to 0.
+
+Bumper_Switches_Handler() was updated to set collision_detected to 1 when a bumper switch is pressed and no collision has already been detected. In the main loop, the robot moves forward until collision_detected is set, then calls Handle_Collision(). The program was rebuilt and flashed, and the robot was placed in the track. Each time the robot hit a wall, it backed up, turned right, and continued moving forward.
 
 ## Known Issues or Limitations  
 There are no known current issues or limitations.  
