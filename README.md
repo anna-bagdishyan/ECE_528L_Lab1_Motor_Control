@@ -51,11 +51,16 @@ Drive_Pattern_1() was used to test the PWM and motor drivers. The program was re
 ### Task 7
 
 ## Known Issues or Limitations  
+There are no known current issues or limitations.  
 
 ## Author Contribution  
 Anna  
+- Wrote Tasks 1, 2, 3, and 6 in "Analysis and Results" on GitHub  
+- Tasks 1, 2, 3, 4, and 5  
 
 Mario  
-
+- Wrote Tasks 4, 5, and 7 in "Analysis and Results" on GitHub  
+- Tasks 6 and 7
+- Wrote "Overview" on GitHub
 ## References
 ECE 528/L Lab 1 - Motor Control.
