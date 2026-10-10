@@ -29,15 +29,30 @@ The bumper switches were configured to generate falling-edge interrupts on Port 
 | Oscilloscope Probes  | 2 | N/A
 
 ## Analysis and Results
-### Procedure
+### Procedure  
+
+![](https://github.com/anna-bagdishyan/ECE_528L_Lab1_Motor_Control/blob/main/Screenshots/ece528L_lab1_servo_0_degrees_group.JPG)  
+Figure 1 - Oscilloscope photo of the servo (0 degrees)  
+
+![](https://github.com/anna-bagdishyan/ECE_528L_Lab1_Motor_Control/blob/main/Screenshots/ece528L_lab1_servo_0_degrees_pulse_width_group.JPG)  
+Figure 2 - Oscilloscope photo of the pulse width for the servo (0 degrees)  
+
+![](https://github.com/anna-bagdishyan/ECE_528L_Lab1_Motor_Control/blob/main/Screenshots/ece528L_lab1_servo_180_degrees_group.JPG)  
+Figure 3 - Oscilloscope photo of the servo (180 degrees)  
+
+![](https://github.com/anna-bagdishyan/ECE_528L_Lab1_Motor_Control/blob/main/Screenshots/ece528L_lab1_servo_180_degrees_pulse_width_group.JPG)  
+Figure 4 - Oscilloscope photo of the pulse width for the servo (180 degrees)  
+
 ### Tasks 1, 2, and 3
 The Bumper_Switches_Init() function was modified to configure P4.7, P4.6, P4.5, P4.3, P4.2, and P4.0 as GPIO inputs with pull-up resistors. The bumper switches were tested through the serial terminal. Pressing a switch generated an interrupt and displayed the corresponding 8-bit switch state. Bumper_Switches_Handler() was also modified to set P8.7 high when a bumper switch is pressed.
 
-Figure # - Serial Terminal Output
+![](https://github.com/anna-bagdishyan/ECE_528L_Lab1_Motor_Control/blob/main/Screenshots/ece528L_lab1_bumper_scope_shot_group.png)  
+Figure 5 - Serial Terminal Output
 
 The BMP0 signal at P4.0 was observed on CH1 and P8.7 was observed on CH2. When BMP0 was pressed, switch bouncing occurred, and P8.7 responded to the falling edge interrupt.
 
-Figure # - Oscilloscope photo of P4.0 and P8.7
+![](https://github.com/anna-bagdishyan/ECE_528L_Lab1_Motor_Control/blob/main/Screenshots/ece528L_lab1_bumper_terminal_output_group.JPG)  
+Figure 6 - Oscilloscope photo of P4.0 and P8.7
 
 ### Task 4
 The Timer_0A_PWM_Init() function was implemented in Timer_0A_PWM.c to generate the PWM signals for the DC motors, using Timer_A2_PWM_Init() as a reference. P2.6 and P2.7 were configured as PWM outputs for the right and left motors. CCR[3] and CCR[4] were set to Toggle/Reset mode and assigned the duty cycle values, and the timer was set to use SMCLK divided by 8 in Up/Down mode.
