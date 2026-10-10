@@ -30,7 +30,7 @@ The bumper switches were configured to generate falling-edge interrupts on Port 
 
 ## Analysis and Results
 ### Procedure  
-The Timer_A2 driver was used to generate two 50 Hz PWM signals on P5.6 and P5.7 to control two HS-485HB servos. Both pins were connected to the oscilloscope through a breadboard, with P5.6 on CH1 and P5.7 on CH2. In the main loop, the servos rotated to 0 with the RGB LED red, then to 180 with the RGB LED blue, switching every three seconds. At 0, the measured pulse width was µs, which is within the expected range of 540–580 µs. At 180°, the measured pulse width was µs, which is within the expected range of 2320–2360 µs.
+The Timer_A2 driver was used to generate two 50 Hz PWM signals on P5.6 and P5.7 to control two HS-485HB servos. Both pins were connected to the oscilloscope through a breadboard, with P5.6 on CH1 and P5.7 on CH2. In the main loop, the servos rotated to 0 with the RGB LED red, then to 180 with the RGB LED blue, switching every three seconds. At 0, the measured pulse width was µs, which is within the expected range of 540–580 µs. At 180, the measured pulse width was µs, which is within the expected range of 2320–2360 µs.
 
 ![](https://github.com/anna-bagdishyan/ECE_528L_Lab1_Motor_Control/blob/main/Screenshots/ece528L_lab1_servo_0_degrees_group.JPG)  
 Figure 1 - Oscilloscope photo of the servo (0 degrees)  
