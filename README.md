@@ -46,7 +46,7 @@ The Timer_0A_PWM_Init() function was implemented in Timer_0A_PWM.c to generate t
 The Motor_Init(), Motor_Left(), and Motor_Right() functions were implemented in Motor.c, using Motor_Forward() and Motor_Backward() as references. Motor_Init() sets P5.4, P5.5, P3.6, and P3.7 as outputs, and sets up Timer_A0 with a 20ms period. Motor_Left() sets the left motor backward and the right motor forward so the robot turns left in place, while Motor_Right() does the opposite. Both functions update the duty cycles and set P3.6 and P3.7 high to enable the motors.
 
 ### Task 6
-Drive_Pattern_1() was used to test the PWM and motor drivers. The program was rebuilt and flashed, and the movement was observed during testing.  
+Drive_Pattern_1() was used to test the PWM and motor drivers. The function call was uncommented in the main loop, and the program was rebuilt and flashed. After testing, the Drive_Pattern_1() call was commented out.
 
 ### Task 7
 
