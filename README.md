@@ -15,7 +15,7 @@ The Motor Control lab interfaces with the following:
 ## Overview
 This lab introduces PWM (Pulse Width Modulation) and edge-triggered interrupts using the TI MSP432 Launchpad and the TI-RSLK chassis. Timer_A2 was used to generate two 50 Hz PWM signals to control two HS-485HB servos, and the signals were verified on an oscilloscope by measuring the pulse widths at the 0 and 180 positions. Timer_A0 was then configured to generate PWM signals that drive the DC motors through the TI DRV8838 motors drivers, and motors functions were implemented to move the robot forward, backward, left, and right.
 
-The bumper switches were configured to generate falling-edge interrupts on Port 4,
+The bumper switches were configured to generate falling-edge interrupts on Port 4, and the effect of switch bouncing was observed on the oscilloscope. Finally, a collision-handling routine was implemented so that the robot stops, backs up, and turns right whenever a bumper switched pressed.
 
 ## Components Used
 | Components Used | Quantity    | Manufacturer 
